@@ -9,9 +9,9 @@ each week
 
 ## Models
 
-* Post --> date:date rationale:text
-* User --> Devise
-* AdminUser --> STI
+- Post --> date:date rationale:text
+x User --> Devise
+- AdminUser --> STI
 
 ## Features
 
