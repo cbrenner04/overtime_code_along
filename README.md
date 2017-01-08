@@ -24,3 +24,7 @@ each week
 ## UI
 
 - Bootstrap --> formatting
+
+## Refactor TODOS:
+
+- Refactor user association integration in features/posts_spec.rb
