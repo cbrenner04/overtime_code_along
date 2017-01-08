@@ -25,7 +25,16 @@ describe "posts" do
     end
   end
 
-  describe "creation" do
+  describe "new" do
+    it "has a link from homepage" do
+      visit root_path
+      click_link("new_post_from_nav")
+
+      expect(status_code).to eq 200
+    end
+  end
+
+  describe "create" do
     before do
       visit new_post_path
     end
