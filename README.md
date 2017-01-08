@@ -25,6 +25,7 @@ each week
 
 - Bootstrap --> formatting
 
-## Refactor TODOS:
+## Refactor TODOs
 
+- Add full_name method for users
 - Refactor user association integration in features/posts_spec.rb
