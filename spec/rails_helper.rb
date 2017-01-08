@@ -1,10 +1,11 @@
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+# frozen_string_literal: true
+ENV["RAILS_ENV"] ||= "test"
+require File.expand_path("../../config/environment", __FILE__)
 
-abort('The Rails environment is running in production') if Rails.env.production?
-require 'spec_helper'
-require 'rspec/rails'
-require 'capybara/rails'
+abort("The Rails environment is running in production") if Rails.env.production?
+require "spec_helper"
+require "rspec/rails"
+require "capybara/rails"
 
 include Warden::Test::Helpers
 Warden.test_mode!

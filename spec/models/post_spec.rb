@@ -11,7 +11,7 @@ RSpec.describe Post, type: :model do
         first_name: "foo",
         last_name: "bar"
       )
-      @post = Post.create!(date: Date.today, rationale: "foo", user: user)
+      @post = Post.create!(date: Time.zone.today, rationale: "foo", user: user)
     end
 
     it "can be created" do

@@ -24,8 +24,8 @@ describe "posts" do
     end
 
     it "has a list of posts" do
-      post1 = Post.create!(date: Date.today, rationale: "foo", user: @user)
-      post2 = Post.create!(date: Date.today, rationale: "bar", user: @user)
+      post1 = Post.create!(date: Time.zone.today, rationale: "foo", user: @user)
+      post2 = Post.create!(date: Time.zone.today, rationale: "bar", user: @user)
       visit posts_path
       expect(page).to have_text post1.rationale
       expect(page).to have_text post2.rationale
@@ -42,7 +42,7 @@ describe "posts" do
     end
 
     it "can be created from new form page" do
-      fill_in "post[date]", with: Date.today
+      fill_in "post[date]", with: Time.zone.today
       fill_in "post[rationale]", with: "foo"
       click_on "Save"
 
@@ -50,7 +50,7 @@ describe "posts" do
     end
 
     it "will have a user associated with it" do
-      fill_in "post[date]", with: Date.today
+      fill_in "post[date]", with: Time.zone.today
       fill_in "post[rationale]", with: "bar"
       click_on "Save"
 
