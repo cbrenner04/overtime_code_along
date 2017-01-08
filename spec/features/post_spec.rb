@@ -3,13 +3,7 @@ require "rails_helper"
 
 describe "posts" do
   before do
-    @user = User.create!(
-      email: "foo@example.com",
-      password: "asdfasdf",
-      password_confirmation: "asdfasdf",
-      first_name: "foo",
-      last_name: "bar"
-    )
+    @user = create :user
     login_as(@user, scope: :user)
   end
 
@@ -24,11 +18,10 @@ describe "posts" do
     end
 
     it "has a list of posts" do
-      post1 = Post.create!(date: Time.zone.today, rationale: "foo", user: @user)
-      post2 = Post.create!(date: Time.zone.today, rationale: "bar", user: @user)
+      create :post
+      create :second_post
       visit posts_path
-      expect(page).to have_text post1.rationale
-      expect(page).to have_text post2.rationale
+      expect(page).to have_text(/Foo|Bar/)
     end
   end
 

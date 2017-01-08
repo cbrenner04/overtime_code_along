@@ -6,6 +6,7 @@ abort("The Rails environment is running in production") if Rails.env.production?
 require "spec_helper"
 require "rspec/rails"
 require "capybara/rails"
+require "factory_girl_rails"
 
 include Warden::Test::Helpers
 Warden.test_mode!
