@@ -34,6 +34,16 @@ describe "posts" do
     end
   end
 
+  describe "delete" do
+    it "can be deleted" do
+      post = create :post
+      visit posts_path
+      click_link("delete_#{post.id}")
+
+      expect(status_code).to eq 200
+    end
+  end
+
   describe "create" do
     before do
       visit new_post_path
