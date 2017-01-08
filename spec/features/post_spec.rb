@@ -50,4 +50,22 @@ describe "posts" do
       expect(User.last.posts.last.rationale).to eq "bar"
     end
   end
+
+  describe "edit" do
+    before { @post = create :post }
+    it "can be reached by clicking edit on index page" do
+      visit posts_path
+      click_link("edit_#{@post.id}")
+      expect(status_code).to eq 200
+    end
+
+    it "can be edited" do
+      visit edit_post_path(@post)
+      fill_in "post[date]", with: Time.zone.today
+      fill_in "post[rationale]", with: "baz"
+      click_on "Save"
+
+      expect(User.last.posts.last.rationale).to eq "baz"
+    end
+  end
 end
