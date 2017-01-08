@@ -23,9 +23,8 @@ each week
 
 ## UI
 
-- Bootstrap --> formatting
+- [x] Bootstrap --> formatting
 
 ## Refactor TODOs
 
-- Add full_name method for users
 - Refactor user association integration in features/posts_spec.rb
