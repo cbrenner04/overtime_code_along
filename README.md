@@ -11,7 +11,7 @@ each week
 
 - [ ] Post --> date:date rationale:text
 - [x] User --> Devise
-- [ ] AdminUser --> STI
+- [x] AdminUser --> STI
 
 ## Features
 
