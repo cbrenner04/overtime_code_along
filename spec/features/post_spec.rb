@@ -2,10 +2,10 @@
 require "rails_helper"
 
 describe "posts" do
-  before do
-    @user = create :user
-    login_as(@user, scope: :user)
-  end
+  let(:user) { create :user }
+  let(:post) { create :post, user: user }
+
+  before { login_as(user, scope: :user) }
 
   describe "index" do
     before { visit posts_path }
@@ -19,15 +19,13 @@ describe "posts" do
     end
 
     it "has a list of posts" do
-      create :post, user: @user
-      create :second_post, user: @user
+      post
       visit posts_path
+
       expect(page).to have_text(/Foo|Bar/)
     end
 
     it "cannot see other users posts" do
-      create :post, user: @user
-      create :second_post, user: @user
       user = create :other_user
       new_post = create :post, user: user, rationale: "Whatever"
 
@@ -48,7 +46,7 @@ describe "posts" do
 
   describe "delete" do
     it "can be deleted" do
-      post = create :post, user: @user
+      post
       visit posts_path
       click_link("delete_#{post.id}")
 
@@ -57,9 +55,7 @@ describe "posts" do
   end
 
   describe "create" do
-    before do
-      visit new_post_path
-    end
+    before { visit new_post_path }
 
     it "has a new form that can be reached" do
       expect(status_code).to eq 200
@@ -83,10 +79,8 @@ describe "posts" do
   end
 
   describe "edit" do
-    before { @post = create :post, user: @user }
-
     it "can be edited" do
-      visit edit_post_path(@post)
+      visit edit_post_path(post)
       fill_in "post[date]", with: Time.zone.today
       fill_in "post[rationale]", with: "baz"
       click_on "Save"
@@ -99,7 +93,7 @@ describe "posts" do
       user = create :other_user
       login_as user, scope: :user
 
-      visit edit_post_path(@post)
+      visit edit_post_path(post)
 
       expect(current_path).to eq root_path
     end
