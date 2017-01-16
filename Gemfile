@@ -30,7 +30,9 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added
+gem "administrate", "~> 0.3.0"
 gem "bootstrap-sass", "~> 3.3.7"
+gem "bourbon", "~> 4.2.7"
 gem "devise", "~> 4.2"
 gem "gritter", "~> 1.2.0"
 gem "rubocop", "~> 0.46.0", require: false
