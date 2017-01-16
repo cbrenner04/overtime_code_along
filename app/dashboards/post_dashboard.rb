@@ -8,11 +8,13 @@ class PostDashboard < Administrate::BaseDashboard
     date: Field::DateTime.with_options(searchable: false),
     rationale: Field::Text.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
-    updated_at: Field::DateTime.with_options(searchable: false)
+    updated_at: Field::DateTime.with_options(searchable: false),
+    status: Field::Text.with_options(searchable: true)
   }.freeze
 
   COLLECTION_ATTRIBUTES = [
     :user,
+    :status,
     :id,
     :date,
     :rationale
@@ -20,6 +22,7 @@ class PostDashboard < Administrate::BaseDashboard
 
   SHOW_PAGE_ATTRIBUTES = [
     :user,
+    :status,
     :id,
     :date,
     :rationale,
