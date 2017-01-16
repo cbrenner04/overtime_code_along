@@ -31,3 +31,4 @@ each week
 ## Refactor TODOs
 
 - Refactor user association integration in features/posts_spec.rb
+- Refactor posts/_form for admin user with status
