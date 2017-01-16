@@ -37,3 +37,4 @@ gem "devise", "~> 4.2"
 gem "gritter", "~> 1.2.0"
 gem "pundit", "~> 1.1.0"
 gem "rubocop", "~> 0.46.0", require: false
+gem "twilio-ruby", "~> 4.13.0"
