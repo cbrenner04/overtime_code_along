@@ -71,12 +71,7 @@ describe "posts" do
   end
 
   describe "edit" do
-    before { @post = create :post }
-    it "can be reached by clicking edit on index page" do
-      visit posts_path
-      click_link("edit_#{@post.id}")
-      expect(status_code).to eq 200
-    end
+    before { @post = create :post, user_id: @user.id }
 
     it "can be edited" do
       visit edit_post_path(@post)
@@ -85,6 +80,16 @@ describe "posts" do
       click_on "Save"
 
       expect(User.last.posts.last.rationale).to eq "baz"
+    end
+
+    it "cannot be edited by a non authorized user" do
+      logout(:user)
+      user = create :non_authorized_user
+      login_as user, scope: :user
+
+      visit edit_post_path(@post)
+
+      expect(current_path).to eq root_path
     end
   end
 end
