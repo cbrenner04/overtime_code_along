@@ -35,4 +35,5 @@ gem "bootstrap-sass", "~> 3.3.7"
 gem "bourbon", "~> 4.2.7"
 gem "devise", "~> 4.2"
 gem "gritter", "~> 1.2.0"
+gem "pundit", "~> 1.1.0"
 gem "rubocop", "~> 0.46.0", require: false
