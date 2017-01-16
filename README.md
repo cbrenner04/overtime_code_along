@@ -23,12 +23,4 @@ each week
 - [ ] Email summary to managers for approval
 - [ ] Needs to be documented if employee did not log overtime
 
-## UI
-
-- [x] Bootstrap --> formatting
-- [x] Icons from glyphicons
-- [x] Update the styles for forms
-
-## Refactor TODOs
-
-- [x] Refactor posts/_form for admin user with status
+## TODOs
