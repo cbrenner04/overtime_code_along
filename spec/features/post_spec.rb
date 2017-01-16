@@ -9,6 +9,7 @@ describe "posts" do
 
   describe "index" do
     before { visit posts_path }
+
     it "can be reached successfully" do
       expect(status_code).to eq 200
     end
@@ -18,10 +19,21 @@ describe "posts" do
     end
 
     it "has a list of posts" do
-      create :post
-      create :second_post
+      create :post, user: @user
+      create :second_post, user: @user
       visit posts_path
       expect(page).to have_text(/Foo|Bar/)
+    end
+
+    it "cannot see other users posts" do
+      create :post, user: @user
+      create :second_post, user: @user
+      user = create :other_user
+      new_post = create :post, user: user, rationale: "Whatever"
+
+      visit posts_path
+
+      expect(page).to_not have_text new_post.rationale
     end
   end
 
@@ -36,7 +48,7 @@ describe "posts" do
 
   describe "delete" do
     it "can be deleted" do
-      post = create :post
+      post = create :post, user: @user
       visit posts_path
       click_link("delete_#{post.id}")
 
@@ -71,7 +83,7 @@ describe "posts" do
   end
 
   describe "edit" do
-    before { @post = create :post, user_id: @user.id }
+    before { @post = create :post, user: @user }
 
     it "can be edited" do
       visit edit_post_path(@post)
@@ -84,7 +96,7 @@ describe "posts" do
 
     it "cannot be edited by a non authorized user" do
       logout(:user)
-      user = create :non_authorized_user
+      user = create :other_user
       login_as user, scope: :user
 
       visit edit_post_path(@post)
