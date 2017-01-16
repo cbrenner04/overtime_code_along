@@ -24,6 +24,8 @@ each week
 ## UI
 
 - [x] Bootstrap --> formatting
+- [ ] Icons from Font Awesome
+- [ ] Update the styles for forms
 
 ## Refactor TODOs
 
