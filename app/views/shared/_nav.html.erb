@@ -11,6 +11,8 @@
     <li class="<%= active?(posts_path) %>">
       <%= link_to "Time Entries", posts_path %>
     </li>
+    <!-- TODO -->
+    <%= render "shared/audit_log_tab" if policy(AuditLog).index? %>
     <li class="<%= active?(new_post_path) %>">
       <%= link_to "Add New Entry", new_post_path, id: "new_post_from_nav" %>
     </li>
@@ -23,9 +25,7 @@
           <li class="divider"></li>
         <% end %>
         <!-- TODO -->
-        <li>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        </li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       </ul>
     </li>
   </ul>
