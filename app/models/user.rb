@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 # no doc
 class User < ApplicationRecord
+  ADMIN_USER_TYPE = "AdminUser"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -16,5 +17,9 @@ class User < ApplicationRecord
 
   def full_name
     "#{last_name.upcase}, #{first_name.upcase}"
+  end
+
+  def admin?
+    type == ADMIN_USER_TYPE
   end
 end
