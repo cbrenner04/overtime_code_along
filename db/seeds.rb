@@ -19,7 +19,8 @@ puts "1 Admin created"
 
 100.times do |post|
   Post.create!(date: Date.today,
-               rationale: "Lorem ipsum dolor sit amet, consectetur adipisicin" \
+               rationale: "#{post} rationale content" \
+                          "Lorem ipsum dolor sit amet, consectetur adipisicin" \
                           "gelit. Ex mollitia quam esse iusto nostrum, dolor " \
                           "nam libero tempora quos excepturi architecto alias" \
                           " facilis sit voluptatum sapiente odit quod. Quidem" \

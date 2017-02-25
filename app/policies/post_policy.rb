@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 # no doc
 class PostPolicy < ApplicationPolicy
+  def approve?
+    admin?
+  end
+
   def update?
     return true if post_approved? && admin?
     return true if user_or_admin && !post_approved?

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :audit_logs, except: [:new, :edit, :destroy]
-  resources :posts
+  resources :posts do
+    get :approve, on: :member
+  end
   devise_for :users, skip: [:registrations]
   root to: 'static#homepage'
 end
