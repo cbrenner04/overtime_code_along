@@ -2,7 +2,10 @@
 # no doc
 class StaticController < ApplicationController
   def homepage
-    @pending_approvals = Post.pending_approvals
-    @recent_audit_items = AuditLog.last(10)
+    if current_user.admin?
+      @pending_approvals = Post.submitted
+      @recent_audit_items = AuditLog.last(10)
+    else
+    end
   end
 end

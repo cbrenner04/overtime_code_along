@@ -7,5 +7,4 @@ class Post < ApplicationRecord
   belongs_to :user
 
   scope :posts_by, ->(user) { where(user: user) }
-  scope :pending_approvals, -> { where(status: "submitted") }
 end
