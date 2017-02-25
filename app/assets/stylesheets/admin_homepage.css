@@ -16,3 +16,7 @@
   margin: 2rem 4.2rem;
   padding: 1.5rem;
 }
+
+.homepage-block:hover {
+  background-color: #172B63;
+}
