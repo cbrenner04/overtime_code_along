@@ -2,7 +2,11 @@
 # no doc
 class AuditLogPolicy < ApplicationPolicy
   def index?
-    return true if admin?
+    admin?
+  end
+
+  def confirm?
+    record.user == user
   end
 
   private
