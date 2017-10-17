@@ -37,7 +37,7 @@ gem "dotenv-rails", "~> 2.1.2", groups: [:development, :test]
 gem "gritter", "~> 1.2.0"
 gem "kaminari", "~> 0.17.0"
 gem "launchy", "~> 2.4", ">= 2.4.3"
+gem "newrelic_rpm", "~> 4.5", ">= 4.5.0.337"
 gem "pundit", "~> 1.1.0"
 gem "rubocop", "~> 0.46.0", require: false
 gem "twilio-ruby", "~> 4.13.0"
-gem "newrelic_rpm", "~> 4.5", ">= 4.5.0.337"
