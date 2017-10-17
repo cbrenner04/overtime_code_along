@@ -18,6 +18,6 @@ class AuditLog < ApplicationRecord
   end
 
   def set_date_verified
-    self.date_verified = Date.today
+    self.date_verified = Time.zone.today
   end
 end
