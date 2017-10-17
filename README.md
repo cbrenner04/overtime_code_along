@@ -20,8 +20,8 @@ each week
 - [x] SMS Sending --> link to approval or overtime input
 - [x] Administrate admin dashboard
 - [x] Block non admin and guest users from admin dashboard
-- [ ] Email summary to managers for approval
+- [x] Email summary to managers for approval
 - [x] Needs to be documented if employee did not log overtime
-- [ ] Create audit log for each text message
+- [x] Create audit log for each text message
 
 ## TODOs
