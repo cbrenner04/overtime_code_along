@@ -28,7 +28,7 @@ Rails.application.configure do
     address: ENV['MAILGUN_SMTP_SERVER'],
     user_name: ENV['MAILGUN_SMTP_LOGIN'],
     password: ENV['MAILGUN_SMTP_PASSWORD'],
-    domain: 'sandbox0d812cf28854447f9a001628e7dadb69.mailgun.org',
+    domain: 'cjb-overtime.herokuapp.com',
     authentication: :plain,
   }
 end
