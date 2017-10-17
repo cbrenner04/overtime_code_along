@@ -5,6 +5,14 @@ module ApplicationHelper
     "active" if current_page?(path)
   end
 
+  def employee?
+    current_user.type == "Employee"
+  end
+
+  def admin?
+    current_user.type == "AdminUser"
+  end
+
   def status_label(status)
     status_span_generator status
   end

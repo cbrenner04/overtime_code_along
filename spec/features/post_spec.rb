@@ -37,6 +37,9 @@ describe "posts" do
 
   describe "new" do
     it "has a link from homepage" do
+      logout(:user)
+      user = create :other_user
+      login_as user, scope: :user
       visit root_path
       click_link("new_post_from_nav")
 

@@ -18,7 +18,7 @@ FactoryGirl.define do
     phone "5555555555"
   end
 
-  factory :other_user, class: "User" do
+  factory :other_user, class: "Employee" do
     first_name "Not"
     last_name "Authorized"
     sequence(:email) { |n| "user#{n}@example.com" }
