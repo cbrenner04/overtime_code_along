@@ -9,9 +9,15 @@ class AuditLog < ApplicationRecord
 
   after_initialize :set_defaults
 
+  before_update :set_date_verified, if: :confirmed?
+
   private
 
   def set_defaults
     self.start_date ||= Time.zone.today - 6.days
+  end
+
+  def set_date_verified
+    self.date_verified = Date.today
   end
 end
