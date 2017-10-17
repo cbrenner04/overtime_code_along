@@ -40,3 +40,4 @@ gem "launchy", "~> 2.4", ">= 2.4.3"
 gem "pundit", "~> 1.1.0"
 gem "rubocop", "~> 0.46.0", require: false
 gem "twilio-ruby", "~> 4.13.0"
+gem "newrelic_rpm", "~> 4.5", ">= 4.5.0.337"
